@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'me.unknown'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation("net.dv8tion:JDA:4.4.0_350")
+}
+
+test {
+    useJUnitPlatform()
+}
