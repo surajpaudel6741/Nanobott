@@ -32,7 +32,7 @@ public class taskGen extends TimerTask {
 }
  class Projects {
     public ArrayList<String> fileReader() throws Exception {
-        File file = new File("https://docs.google.com/document/d/1bDy3o9AWT-bzbWsx4RBfR_V5QsHiUDOwBb__UOvTTfs/edit?usp=sharing");
+        File file = new File("nanobot/com/listeners/projects.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader BFR = new BufferedReader(fileReader);
         ArrayList<String> list = new ArrayList<>();

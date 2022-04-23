@@ -1,19 +1,21 @@
 package nanobot.com.listeners;
 import nanobot.com.Main;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
-import java.util.Calendar;
-import java.util.Timer;
+import java.util.*;
 
 public class Talks extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(@NotNull GuildMessageReceivedEvent event) {
         TextChannel textChannel = event.getChannel();
+
         String[] args = event.getMessage().getContentRaw().split(" ");
         if (args[0].equalsIgnoreCase(Main.prefix + "hello")) {
-            event.getMessage().reply("hey there").queue();
+            event.getMessage().reply("Hi "+event.getAuthor().getName()).queue();
         }
         if (args[0].equalsIgnoreCase(Main.prefix + "start")) {
             if (textChannel.getId().equals("966787364263444521") && !Main.runStarted) {
@@ -33,10 +35,26 @@ public class Talks extends ListenerAdapter {
                         date.getTime(),
                         1000 * 10);
             } else {
+
                 textChannel.sendMessage("Inappropriate Channel Or it is already running").queue();
             }
+        }
+        if (args[0].equalsIgnoreCase(Main.prefix + "submit")) {
+            if(event.getMessage().getAttachments().isEmpty()){
+                event.getChannel().sendMessage("Where is file?").queue();
+            }else{
+                if (Objects.requireNonNull(event.getMessage().getAttachments().get(0).getFileExtension()).equalsIgnoreCase("c")
+                || Objects.requireNonNull(event.getMessage().getAttachments().get(0).getFileExtension()).equalsIgnoreCase("java")
+                || Objects.requireNonNull(event.getMessage().getAttachments().get(0).getFileExtension()).equalsIgnoreCase("cpp")
+                ) {
+                event.getChannel().sendMessage("Yay you got 1 point").queue();
+                }
+            }
+
+        }
         }
 
 
     }
-}
+
+
