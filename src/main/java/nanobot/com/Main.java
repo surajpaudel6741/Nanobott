@@ -14,7 +14,7 @@ public class Main {
     public static JDA client;
     public static boolean runStarted=false;
     public static void main(String[] args)throws Exception {
-         client = JDABuilder.createDefault("OTQ5NjUwNzQxNzc2MjQ4ODcz.YiNdLA.ZZHNx7YHNyIShzsN4lc6iiKWXgk")
+         client = JDABuilder.createDefault("OTQ5NjUwNzQxNzc2MjQ4ODcz.YiNdLA.yzB-rB4wSp0wrxsFi7_P3naoaVs")
                 .setActivity(Activity.watching("You"))
                  .enableIntents(GatewayIntent.GUILD_MEMBERS)
                  .setChunkingFilter(ChunkingFilter.ALL)
