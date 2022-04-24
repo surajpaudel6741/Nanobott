@@ -1,0 +1,1 @@
+Worker: java src\main\java\nanobot\com\Main.java
