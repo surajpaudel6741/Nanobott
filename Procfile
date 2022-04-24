@@ -1,1 +1,1 @@
-Worker: java src\main\java\nanobot\com\Main.java
+Web: java src\main\java\nanobot\com\Main.java
