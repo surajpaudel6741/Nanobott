@@ -1,1 +1,1 @@
-Web: java src\main\java\nanobot\com\Main.java
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* src\main\java\nanobot\com\Main.java
